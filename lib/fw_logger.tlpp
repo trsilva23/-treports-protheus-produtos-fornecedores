@@ -1,0 +1,16 @@
+#include 'protheus.ch'
+
+namespace fw_logger
+
+export method Info(cMsg as character) as nil
+    local cFile := "logs/provider.log"
+    // Ensure folder exists (best-effort)
+    try
+        // Append message with timestamp
+        local cLine := FwTimeStamp("", 6) + " [INFO] " + cMsg + CRLF
+        // Simple file append
+        StrToFile(cLine, cFile, .T.)
+    catch
+        // ignore logging errors to avoid impacting main flow
+    endtry
+return nil
