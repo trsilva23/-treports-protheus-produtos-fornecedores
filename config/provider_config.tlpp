@@ -1,0 +1,9 @@
+// Provider configuration and constants
+namespace provider_config
+
+export TABLE_NAME := "SA5"
+export DEFAULT_PAGE_SIZE := 100
+export USE_LIMIT_OFFSET := .F. // Set to .T. to enable Oracle pagination wrapper
+export MIN_LIB_LABEL := "20230515"
+
+return nil
