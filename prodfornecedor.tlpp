@@ -6,7 +6,7 @@
     
 namespace custom.produtos.fornecedores
 
-// Imported and adapted by trsilva23 on 2025-12-30
+// trsilva23 on 2025-12-30
 // Changes: A1..A10 improvements applied (parameterization, validation, logging, safe close, config)
 
 @totvsFrameworkTReportsIntegratedProvider(active=.T., team="SIGACOM", tables="SA5", name="Produto X Fornecedor", country="ALL", initialRelease="12.1.2210")
@@ -64,7 +64,7 @@ local lSuccess as logical
 lSuccess := .F.
 try
     nCount := 0
-    // base select
+    // base select2
     cBaseQuery := "SELECT A5_FILIAL,A5_PRODUTO,A5_NOMPROD,A5_FORNECE,A5_NOMEFOR,A5_LOJA,A5_CODPRF FROM " + RetSQLName(provider_config:TABLE_NAME) + " WHERE D_E_L_E_T_ = ' '"
     // Use filter expression if present (oFilter should provide SQL expression already sanitized by the framework)
     if oFilter:hasFilter()
